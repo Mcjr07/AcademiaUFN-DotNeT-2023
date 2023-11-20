@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Exemplo de Mensagem com JavaScript</title>
+</head>
+<body>
+  <h1>Informe seu nome e idade:</h1>
+  <input type="text" id="nome" placeholder="Nome">
+  <input type="text" id="idade" placeholder="Idade">
+  <button id="mostrarMensagem">Mostrar Mensagem</button>
+  <p id="mensagem"></p>
+
+  <script>
+    let nomeInput = document.getElementById("nome");
+    let idadeInput = document.getElementById("idade");
+    let mostrarMensagemButton = document.getElementById("mostrarMensagem");
+    let mensagemElement = document.getElementById("mensagem");
+
+    mostrarMensagemButton.addEventListener("click", function() {
+      let nome = nomeInput.value;
+      let idade = idadeInput.value;
+
+      let mensagem = `${nome} tem ${idade} anos.`;
+
+      mensagemElement.textContent = mensagem;
+    });
+  </script>
+</body>
+</html>
+---------------------------------------------------------------
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Soma de Números com JavaScript (usando let)</title>
+</head>
+<body>
+  <h1>Informe dois números:</h1>
+  <input type="number" id="numero1" placeholder="Número 1">
+  <input type="number" id="numero2" placeholder="Número 2">
+  <button id="somar">Somar</button>
+  <p id="resultado"></p>
+
+  <script>
+    // Capturando elementos do DOM
+    let numero1Input = document.getElementById("numero1");
+    let numero2Input = document.getElementById("numero2");
+    let somarButton = document.getElementById("somar");
+    let resultadoElement = document.getElementById("resultado");
+
+    // Adicionando um evento de clique ao botão
+    somarButton.addEventListener("click", function() {
+      // Obtendo os valores dos campos de entrada
+      let numero1 = parseFloat(numero1Input.value);
+      let numero2 = parseFloat(numero2Input.value);
+
+      // Verificando se os valores são números válidos
+      if (!isNaN(numero1) && !isNaN(numero2)) {
+        // Calculando a soma
+        let resultado = numero1 + numero2;
+
+        // Exibindo o resultado
+        resultadoElement.textContent = `Resultado: ${resultado}`;
+      } else {
+        // Exibindo uma mensagem de erro se os valores não forem números válidos
+        resultadoElement.textContent = "Por favor, insira números válidos em ambos os campos.";
+      }
+    });
+  </script>
+</body>
+</html>
+---------------------------------------------------------------------------------------
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Verificar Idade com JavaScript (usando let)</title>
+</head>
+<body>
+  <h1>Informe seu nome e idade:</h1>
+  <input type="text" id="nome" placeholder="Nome">
+  <input type="text" id="idade" placeholder="Idade">
+  <button id="verificarIdade">Verificar Idade</button>
+  <p id="mensagem"></p>
+
+  <script>
+    // Capturando elementos do DOM
+    let nomeInput = document.getElementById("nome");
+    let idadeInput = document.getElementById("idade");
+    let verificarIdadeButton = document.getElementById("verificarIdade");
+    let mensagemElement = document.getElementById("mensagem");
+
+    // Adicionando um evento de clique ao botão
+    verificarIdadeButton.addEventListener("click", function() {
+      // Obtendo os valores dos campos de entrada
+      let nome = nomeInput.value;
+      let idade = parseInt(idadeInput.value, 10); // Convertendo a idade para um número inteiro
+
+      // Verificando se a idade é maior que 18
+      if (idade > 18) {
+        // Construindo a mensagem se a idade for maior que 18
+        let mensagem = `${nome} é maior de idade.`;
+        mensagemElement.textContent = mensagem;
+      } else {
+        // Construindo a mensagem se a idade for menor ou igual a 18
+        let mensagem = `${nome} é menor de idade.`;
+        mensagemElement.textContent = mensagem;
+      }
+    });
+  </script>
+</body>
+</html>
